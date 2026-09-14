@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaInstagram, FaFacebookF, FaXTwitter } from 'react-icons/fa6';
 import { Wordmark } from '../atoms/Wordmark';
 
 // ---------------------------------------------------------------------------
@@ -41,16 +42,19 @@ const SOCIAL_LINKS = [
     label: 'Instagram',
     href: '#',
     ariaLabel: 'Follow us on Instagram (placeholder)',
+    Icon: FaInstagram,
   },
   {
     label: 'Facebook',
     href: '#',
     ariaLabel: 'Follow us on Facebook (placeholder)',
+    Icon: FaFacebookF,
   },
   {
     label: 'X (Twitter)',
     href: '#',
     ariaLabel: 'Follow us on X / Twitter (placeholder)',
+    Icon: FaXTwitter,
   },
 ] as const;
 
@@ -185,21 +189,12 @@ export const Footer: React.FunctionComponent<FooterProps> = ({
                     aria-label={link.ariaLabel}
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/70 transition-colors hover:border-white/40 hover:text-white focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                   >
-                    {/* Placeholder icon — swap for real brand icons when available */}
-                    <svg
-                      className="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 12h8" />
-                    </svg>
-                  </a>
+                    {/* Real brand icon from react-icons (per teammate's review note) */}
+                  <link.Icon
+                    className="h-5 w-5"
+                    aria-hidden="true"
+                  />
+                </a>
                 </li>
               ))}
             </ul>

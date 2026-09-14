@@ -1,0 +1,5 @@
+import"./iframe-DlD5jdFI.js";import{t as e}from"./react-B2bOIsBf.js";import{t}from"./jsx-runtime-BfETmhAO.js";e();var n=t(),r=({href:e,className:t,...r})=>{let i=[`font-heading`,`text-white`,`font-semibold`,`tracking-tight`,e?`hover:opacity-90 transition-opacity`:`cursor-default select-none`,t??``].filter(Boolean).join(` `);return e?(0,n.jsx)(`a`,{href:e,className:i,...r,children:`Toltem`}):(0,n.jsx)(`span`,{className:i,"aria-label":`Toltem Restaurant`,...r,children:`Toltem`})};r.__docgenInfo={description:`Toltem wordmark.
+
+The brand logo is the word "Toltem" rendered in white.
+This atom is reused by both the Header and Footer organisms so the
+brand identity stays consistent across the site.`,methods:[],displayName:`Wordmark`,props:{href:{required:!1,tsType:{name:`string`},description:`Destination URL when the wordmark is wrapped in a link.`}}};export{r as t};

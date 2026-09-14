@@ -1,0 +1,83 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as HeaderStories from './Header.stories';
+
+<Meta of={HeaderStories} />
+
+# Header Organism
+
+The Toltem header is an **organism** in Atomic Design terms: it combines atoms
+(`Wordmark`) and molecules (navigation group, cart control, action button) into
+a meaningful, self-contained section that appears on every page.
+
+## Layout
+
+```
+[ Toltem ]  [ Home | Menu | About | Contact ]  [ Cart · Order Now ]
+```
+
+- **Left:** Toltem wordmark (white text, clickable to home)
+- **Center:** navigation links with active-state highlighting
+- **Right:** cart indicator + Order Now action
+
+## Mobile behavior
+
+On screens narrower than 768px the header collapses to:
+
+```
+[ Toltem ............ ☰ ]
+```
+
+Tapping the hamburger opens a **full-screen overlay** containing:
+- Home, Menu, About, Contact
+- Cart
+- Order Now
+- A clearly labeled close control
+
+The overlay:
+- traps focus inside the menu while open
+- restores focus to the hamburger on close
+- locks body scroll while open
+- closes automatically on resize back to desktop width
+- supports keyboard Escape to close
+
+## Active state
+
+Pass `activePath` to highlight the matching navigation item:
+
+```
+<Header activePath="/menu" />
+```
+
+## Reusing the Button component
+
+The "Order Now" action is currently implemented as a styled `<button>`. When the
+teammate's reusable `Button` component is ready, replace that element with
+`<Button>Order Now</Button>` and delete the inline styles. The Header is
+structured so that swap is a local change — no rest of the organism needs to
+move.
+
+## Accessibility
+
+- Semantic `<header>` / `<nav>` / `<a>` / `<button>` elements
+- Hamburger has `aria-expanded` and an accessible label
+- Close button has an accessible label
+- Visible focus rings on every interactive control
+- High contrast white text on the purple brand background
+
+## Props
+
+<Controls />
+
+## Stories
+
+<Canvas>
+  <Story of={HeaderStories.Default} />
+</Canvas>
+
+<Canvas>
+  <Story of={HeaderStories.WithActiveMenu} />
+</Canvas>
+
+<Canvas>
+  <Story of={HeaderStories.MobilePreview} />
+</Canvas>

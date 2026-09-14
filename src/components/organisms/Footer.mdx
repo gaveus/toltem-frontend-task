@@ -1,0 +1,74 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as FooterStories from './Footer.stories';
+
+<Meta of={FooterStories} />
+
+# Footer Organism
+
+The Toltem footer is an **organism** in Atomic Design terms: it combines atoms
+(`Wordmark`) and molecules (navigation group, contact items, social links) into a
+self-contained page section that appears on every page.
+
+## Layout
+
+```
+[ Brand ]       [ Navigation ]    [ Contact ]       [ Social ]
+Toltem           Home              Address           Instagram
+description      Menu              Phone             Facebook
+                                   Email             X / Twitter
+
+© Toltem Restaurant · All rights reserved.
+```
+
+## Brand consistency
+
+The footer reuses the same `Wordmark` atom as the header so the brand stays
+visually identical across the site. Do not introduce a second logo variation.
+
+## Placeholder strategy
+
+Business details (address, phone, email, description, social accounts) are
+configurable props with clearly-marked defaults. None of these are fake real
+business information — they are placeholders that can be replaced when the
+actual data is available:
+
+```tsx
+<Footer
+  description="Farm-to-table dishes crafted daily."
+  address="456 Food Avenue, Metropolis"
+  phone="08012345678"
+  email="reservations@toltem.example"
+/>
+```
+
+## Reusing the Button component
+
+The footer does not currently contain an action button. If an action is ever
+needed (for example a newsletter subscribe), plug in the teammate's `Button`
+component the same way the header will.
+
+## Accessibility
+
+- Semantic `<footer>` / `<section>` / `<a>` elements
+- Each section has an `aria-label`
+- Social links have descriptive `aria-label`s since the icons are placeholders
+- Email is a real `mailto:` link
+- Visible focus rings on every interactive control
+
+## Props
+
+<Controls />
+
+## Stories
+
+<Canvas>
+  <Story of={FooterStories.Default} />
+</Canvas>
+
+<Canvas>
+  <Story of={FooterStories.WithCustomInfo} />
+</Canvas>
+
+<Canvas>
+  <Story of={FooterStories.Minimal} />
+</Canvas>

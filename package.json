@@ -36,6 +36,7 @@
     "autoprefixer": "^10.5.6",
     "babel-jest": "^30.5.1",
     "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.5.1",
     "jest-environment-jsdom": "^30.5.1",
     "oxlint": "^1.81.0",
     "postcss": "^8.5.28",

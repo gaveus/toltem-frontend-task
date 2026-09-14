@@ -1,130 +1,46 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import { Header } from './components/organisms/Header'
-import { Footer } from './components/organisms/Footer'
-import './App.css'
+import { Header } from './components/organisms/Header';
+import { Footer } from './components/organisms/Footer';
 
+/**
+ * Toltem Restaurant home page.
+ *
+ * Composes the shared Header/Footer organisms. Sections below the header are
+ * placeholders until the menu, about and contact pages are built.
+ */
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <Header activePath="/" />
+      <Header activePath="/" cartCount={0} />
 
-      <main id="main-content" className="min-h-screen">
-        <section id="center">
-          <div className="hero">
-            <img src={heroImg} className="base" width="170" height="179" alt="" />
-            <img src={reactLogo} className="framework" alt="React logo" />
-            <img src={viteLogo} className="vite" alt="Vite logo" />
-          </div>
-          <div>
-            <h1>Get started</h1>
-            <p>
-              Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-            </p>
-          </div>
-          <button
-            type="button"
-            className="counter"
-            onClick={() => setCount((count) => count + 1)}
-          >
-            Count is {count}
-          </button>
-        </section>
-
-        <div className="ticks"></div>
-
-        <section id="next-steps">
-          <div id="docs">
-            <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#documentation-icon"></use>
-            </svg>
-            <h2>Documentation</h2>
-            <p>Your questions, answered</p>
-            <ul>
-              <li>
-                <a href="https://vite.dev/" target="_blank">
-                  <img className="logo" src={viteLogo} alt="" />
-                  Explore Vite
-                </a>
-              </li>
-              <li>
-                <a href="https://react.dev/" target="_blank">
-                  <img className="button-icon" src={reactLogo} alt="" />
-                  Learn more
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div id="social">
-            <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#social-icon"></use>
-            </svg>
-            <h2>Connect with us</h2>
-            <p>Join the Vite community</p>
-            <ul>
-              <li>
-                <a href="https://github.com/vitejs/vite" target="_blank">
-                  <svg
-                    className="button-icon"
-                    role="presentation"
-                    aria-hidden="true"
-                  >
-                    <use href="/icons.svg#github-icon"></use>
-                  </svg>
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="https://chat.vite.dev/" target="_blank">
-                  <svg
-                    className="button-icon"
-                    role="presentation"
-                    aria-hidden="true"
-                  >
-                    <use href="/icons.svg#discord-icon"></use>
-                  </svg>
-                  Discord
-                </a>
-              </li>
-              <li>
-                <a href="https://x.com/vite_js" target="_blank">
-                  <svg
-                    className="button-icon"
-                    role="presentation"
-                    aria-hidden="true"
-                  >
-                    <use href="/icons.svg#x-icon"></use>
-                  </svg>
-                  X.com
-                </a>
-              </li>
-              <li>
-                <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                  <svg
-                    className="button-icon"
-                    role="presentation"
-                    aria-hidden="true"
-                  >
-                    <use href="/icons.svg#bluesky-icon"></use>
-                  </svg>
-                  Bluesky
-                </a>
-              </li>
-            </ul>
+      <main id="main-content" className="min-h-[60vh]">
+        <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-semibold tracking-tight text-[#4C1D95] sm:text-4xl">
+            Welcome to Toltem
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-base text-gray-500">
+            A modern dining experience served with care. Our full menu, story
+            and ordering are coming soon.
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="/menu"
+              className="inline-flex items-center justify-center rounded-lg bg-[#7C3AED] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6D28D9]"
+            >
+              View Our Menu
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-gray-400 hover:text-gray-900"
+            >
+              Contact Us
+              </a>
           </div>
         </section>
-
-        <div className="ticks"></div>
-        <section id="spacer"></section>
       </main>
 
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

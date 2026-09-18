@@ -33,6 +33,13 @@
 
 html {
   min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+#menu,
+#about,
+#contact {
+  scroll-margin-top: 90px;
 }
 
 body {
